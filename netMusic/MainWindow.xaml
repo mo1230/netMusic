@@ -343,8 +343,8 @@
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Grid Background="BlueViolet"></Grid>
-                <Grid></Grid>
+                <Grid Background="Red"></Grid>
+                <Grid ></Grid>
             </Grid>
 
 
@@ -362,31 +362,31 @@
                         <StackPanel>
                             <StackPanel Margin="10">
                                 <TextBlock Text="推荐" Foreground="Gray" />
-                                <Button Style="{DynamicResource btnLeftStyle}">
+                                <Button x:Name="BtnFind" Style="{DynamicResource btnLeftStyle}" Click="BtnFind_Click">
                                     <StackPanel Orientation="Horizontal" Margin="0 0 30 0">
                                         <TextBlock Text="&#xe62e;" Foreground="Gray"/>
                                         <TextBlock Text="发现音乐" Foreground="Gray" Margin="20 0 0 0"/>
                                     </StackPanel>
                                 </Button>
-                                <Button Style="{DynamicResource btnLeftStyle}">
+                                <Button x:Name="BtnFM" Style="{DynamicResource btnLeftStyle}" Click="BtnFM_Click">
                                     <StackPanel Orientation="Horizontal" Margin="0 0 30 0" >
                                         <TextBlock Text="&#xe60c;" Foreground="Gray"/>
                                         <TextBlock Text="私人FM" Foreground="Gray" Margin="20 0 0 0"/>
                                     </StackPanel>
                                 </Button>
-                                <Button Style="{DynamicResource btnLeftStyle}">
+                                <Button x:Name="BtnLOOK" Style="{DynamicResource btnLeftStyle}" Click="BtnLOOK_Click">
                                     <StackPanel Orientation="Horizontal" Margin="0 0 20 0">
                                         <TextBlock Text="&#xe64b;" Foreground="Gray"/>
                                         <TextBlock Text="LOOK直播" Foreground="Gray" Margin="20 0 0 0"/>
                                     </StackPanel>
                                 </Button>
-                                <Button Style="{DynamicResource btnLeftStyle}">
+                                <Button x:Name="BtnVideo" Click="BtnVideo_Click" Style="{DynamicResource btnLeftStyle}">
                                     <StackPanel Orientation="Horizontal" Margin="0 0 50 0">
                                         <TextBlock Text="&#xe658;" Foreground="Gray"/>
                                         <TextBlock Text="视频" Foreground="Gray" Margin="20 0 0 0"/>
                                     </StackPanel>
                                 </Button>
-                                <Button Style="{DynamicResource btnLeftStyle}">
+                                <Button x:Name="BtnFriend" Click="BtnFriend_Click" Style="{DynamicResource btnLeftStyle}">
                                     <StackPanel Orientation="Horizontal" Margin="0 0 50 0">
                                         <TextBlock Text="&#xe746;" Foreground="Gray"/>
                                         <TextBlock Text="朋友" Foreground="Gray"  Margin="20 0 0 0"/>
@@ -397,13 +397,13 @@
 
                             <StackPanel Margin="10">
                                 <TextBlock Text="我的音乐" Foreground="Gray" />
-                                <Button Style="{DynamicResource btnLeftStyle}">
+                                <Button x:Name="BtnLocalMusic" Click="BtnLocalMusic_Click" Style="{DynamicResource btnLeftStyle}">
                                     <StackPanel Orientation="Horizontal" Margin="0 0 30 0">
                                         <TextBlock Text="&#xe601;" Foreground="Gray"/>
                                         <TextBlock Text="本地音乐" Foreground="Gray" Margin="20 0 0 0"/>
                                     </StackPanel>
                                 </Button>
-                                <Button Style="{DynamicResource btnLeftStyle}">
+                                <Button x:Name="BtnDownload" Click="BtnDownload_Click" Style="{DynamicResource btnLeftStyle}">
                                     <StackPanel Orientation="Horizontal" Margin="0 0 30 0" >
                                         <TextBlock Text="&#xe856;" Foreground="Gray"/>
                                         <TextBlock Text="下载管理" Foreground="Gray" Margin="20 0 0 0"/>
@@ -429,7 +429,9 @@
                 </Border>
 
 
-                <Grid/>
+                <Grid Grid.Column="1">
+                    <Frame x:Name="Frame" NavigationUIVisibility="Hidden" Content="{Binding Path=MainPage}"/>
+                </Grid>
             </Grid>
 
 
